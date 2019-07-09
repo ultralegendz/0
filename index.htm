@@ -1,0 +1,1158 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="https://www.themepush.com/demo-mundana/xmlrpc.php">
+
+<title>Mundana &#8211; WordPress Theme Demo</title>
+            <script type="text/javascript" id="wpuf-language-script">
+                var error_str_obj = {
+                    'required' : 'is required',
+                    'mismatch' : 'does not match',
+                    'validation' : 'is not valid'
+                }
+            </script>
+            <link rel='dns-prefetch' href='//s.w.org'>
+<link href='https://fonts.gstatic.com' crossorigin="" rel='preconnect'>
+<link rel="alternate" type="application/rss+xml" title="Mundana &raquo; Feed" href="feed\index.rss">
+<link rel="alternate" type="application/rss+xml" title="Mundana &raquo; Comments Feed" href="comments\feed\index.rss">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.themepush.com\/demo-mundana\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='lrm-modal-css' href='wp-content\plugins\ajax-login-and-registration-modal-popup\assets\lrm-core-compiled.css?ver=26' type='text/css' media='all'>
+<link rel='stylesheet' id='lrm-modal-skin-css' href='wp-content\plugins\ajax-login-and-registration-modal-popup\skins\default\skin.css?ver=26' type='text/css' media='all'>
+<link rel='stylesheet' id='wp-block-library-css' href='wp-includes\css\dist\block-library\style.min.css?ver=5.2.2' type='text/css' media='all'>
+<link rel='stylesheet' id='wp-block-library-theme-css' href='wp-includes\css\dist\block-library\theme.min.css?ver=5.2.2' type='text/css' media='all'>
+<link rel='stylesheet' id='edd-styles-css' href='wp-content\plugins\easy-digital-downloads\templates\edd.min.css?ver=2.9.16' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content\plugins\contact-form-7\includes\css\styles.css?ver=5.1.3' type='text/css' media='all'>
+<link rel='stylesheet' id='mundana-styles-css' href='wp-content\themes\mundana\assets\css\theme.min.css?ver=1.1.6.1558301093' type='text/css' media='all'>
+<link rel='stylesheet' id='claps-applause-css' href='wp-content\plugins\wp-claps-applause\css\claps-applause.css?ver=5.2.2' type='text/css' media='all'>
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='wp-json\index.json'>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.xml?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes\wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.2.2">
+<meta name="generator" content="Easy Digital Downloads v2.9.16">
+
+<script type="text/javascript">
+	function addHandler(object, event, handler) {
+		if (typeof object.addEventListener != 'undefined') 
+			object.addEventListener(event, handler, false);
+		else
+			if (typeof object.attachEvent != 'undefined')
+				object.attachEvent('on' + event, handler);
+			else 
+				throw 'Incompatible browser';
+	}
+</script>
+        <style>
+
+        </style>
+        <link rel="icon" href="wp-content\uploads\sites\32\2019\01\cropped-logo-full-32x32.png" sizes="32x32">
+<link rel="icon" href="wp-content\uploads\sites\32\2019\01\cropped-logo-full-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="wp-content\uploads\sites\32\2019\01\cropped-logo-full-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.themepush.com/demo-mundana/wp-content/uploads/sites/32/2019/01/cropped-logo-full-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			html.html-has-lrm {
+    overflow: unset !important;
+}
+.listrecent .card img.avatar {   height: auto;}		</style>
+		<style id="kirki-inline-styles">.mediumnavigation{background-color:#ffffff;}a, a:hover{color:#03a87c;}#comments a{color:#03a87c;}.comment-form input.submit, .lrm-form button, .lrm-form button[type=submit]{background-color:#03a87c;}.comment-form input.submit{border-color:#03a87c;}input[type="submit"], button, .btn-outline-success:hover{background-color:#03a87c;}.btn-outline-success, .btn-outline-success:hover{border-color:#03a87c;}.btn-outline-success{color:#03a87c;}.introjumbo.bglight{background-color:#e8f3ec;}.introjumbo.bglight, .introjumbo .secondfont{color:#222222;}footer.footer a{color:#1C9963;}body{font-size:1rem;line-height:1.6;color:#222222;}b, strong, .font-weight-bold, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{color:#222222;}.navbar-brand{font-family:Georgia,Times,"Times New Roman",serif;font-size:1.65rem;font-weight:700;letter-spacing:0px;color:#222222;}.nav-link,.dropdown-item{font-size:0.9rem;letter-spacing:0.1px;text-transform:uppercase;}.article-headline{font-family:Georgia,Times,"Times New Roman",serif;font-size:3.2rem;font-weight:400;line-height:1.15;color:#222222;}.article-post, #comments .comment-content{font-family:Lora, Georgia, serif;font-size:1.25rem;font-weight:400;line-height:1.72;color:#444444;}.article-post b, .article-post strong{font-family:Lora, Georgia, serif;font-weight:700;color:#222222;}.article-post em, .article-post blockquote{font-family:Lora, Georgia, serif;font-weight:400;font-style:italic;color:#222222;}.introjumbo h1{font-family:Georgia,Times,"Times New Roman",serif;font-size:2.4rem;font-weight:700;line-height:1.1;}.thesidebar .spanborder.h4{font-size:1.5em;}.widget-area .mc4wp-form{background-color:#e8f3ec;}.widget-area .mc4wp-form input[type="submit"]{background-color:#03a87c;}.widget-area .mc4wp-form, .mc4wp-form-fields h1, .mc4wp-form-fields h2, .mc4wp-form-fields h3, .mc4wp-form-fields h4, .mc4wp-form-fields h5, .mc4wp-form-fields h6{color:#222222;}@media (max-width: 1280px){.container{max-width:1070px;}}@font-face{font-display:swap;font-family:'Lora';font-style:italic;font-weight:400;src:local('Lora Italic'), local('Lora-Italic'), url(wp-content/uploads/sites/32/2019/07/0QIhMX1D_JOuMw_7JQ.woff) format('woff');}@font-face{font-display:swap;font-family:'Lora';font-style:normal;font-weight:400;src:local('Lora Regular'), local('Lora-Regular'), url(wp-content/uploads/sites/32/2019/07/0QIvMX1D_JOuAw4.woff) format('woff');}@font-face{font-display:swap;font-family:'Lora';font-style:normal;font-weight:700;src:local('Lora Bold'), local('Lora-Bold'), url(wp-content/uploads/sites/32/2019/07/0QIgMX1D_JOuO7HeBtg.woff) format('woff');}</style></head> 
+    
+<body data-rsssl="1" class="home blog"> 
+        
+
+    
+           
+<header id="MagicMenu" class="navbar-light fixed-top navbar mediumnavigation">
+
+    
+<div class="container">
+       
+        <div class="d-lg-flex justify-content-between align-items-center brandrow w-100">
+            
+            <!-- Begin Logo --> 
+            <div class="logoarea">
+                                     <a class="navbar-brand" href="index.htm">Mundana</a>
+                            </div>
+            <!-- End Logo --> 
+            
+            
+        
+            <!-- Secondary Top Menu -->
+            
+                <div class="navbar-expand-lg  d-lg-flex align-items-center text-lg-right">
+                    
+                <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#bs4navbar,#bs4navbartop" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menuclose">X</span>
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                    
+                 
+                    
+                <div id="bs4navbartop" class="collapse navbar-collapse"><ul id="menu-extra-menu" class="navbar-nav w-100 d-lg-flex align-items-center"><li class="menu-item search align-self-center"><form action="https://www.themepush.com/demo-mundana/" class="search-form" autocomplete="off">
+				<div class="form-group has-feedback">
+						<input type="hidden" name="post_type" value="post">
+						<input type="text" class="form-control" name="s" placeholder="Type and hit enter...">
+						<i class="fa fa-search form-control-feedback"></i>
+				</div>
+		</form></li><li id="menu-item-478" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-478 nav-item"><a href="publish-a-story\index.htm" class="nav-link">Publish a Story</a></li>
+<li id="menu-item-784" class="lrm-show-if-logged-in menu-item menu-item-type-post_type menu-item-object-page menu-item-784 nav-item"><a href="account\index.htm" class="nav-link">My account</a></li>
+<li id="menu-item-573" class="lrm-login lrm-hide-if-logged-in menu-item menu-item-type-custom menu-item-object-custom menu-item-573 nav-item"><a href="#login" class="nav-link">Sign in</a></li>
+<li id="menu-item-785" class="highlight menu-item menu-item-type-custom menu-item-object-custom menu-item-785 nav-item"><a target="_blank" href="https://www.wowthemes.net/themes/mundana-wordpress/" class="nav-link">Buy Theme</a></li>
+</ul></div>      
+                    
+                </div>
+             
+            <!-- Secondary Top Menu -->
+                    
+        </div>
+        
+    
+        <!-- Main Menu -->
+        <div class="navbar-expand-lg d-flex  align-items-center w-100">      
+            
+            <div id="bs4navbar" class="collapse navbar-collapse"><ul id="menu-top-menu" class="navbar-nav w-100 d-flex align-items-center justify-content-between"><li id="menu-item-574" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-574 nav-item active"><a href="index.htm" class="nav-link active">Home</a></li>
+<li id="menu-item-464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-464 nav-item"><a href="category\life\index.htm" class="nav-link">life</a></li>
+<li id="menu-item-465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-465 nav-item"><a href="category\marketing\index.htm" class="nav-link">marketing</a></li>
+<li id="menu-item-466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-466 nav-item"><a href="category\how-to\index.htm" class="nav-link">how to</a></li>
+<li id="menu-item-467" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-467 nav-item"><a href="category\creativity\index.htm" class="nav-link">creativity</a></li>
+<li id="menu-item-469" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-469 nav-item"><a href="category\social\index.htm" class="nav-link">social</a></li>
+<li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470 nav-item"><a href="authors\index.htm" class="nav-link">Authors</a></li>
+<li id="menu-item-468" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-468 nav-item"><a href="publish-a-story\index.htm" class="nav-link">Publish a Story</a></li>
+<li id="menu-item-794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794 nav-item"><a href="contact\index.htm" class="nav-link">Contact</a></li>
+</ul></div>       
+        </div>
+        <!-- Main Menu -->
+        
+            
+    </div>
+
+</header>
+    
+       
+<!-- Begin site-content
+================================================== -->
+    
+<div class="container site-content"> 
+     
+
+    
+    <!-- first 5 posts on top --> 
+        <div class="alignfullincol">
+        <div class="container-fluid homelatest removetoppadding ">
+                
+        <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-4 col-xl-4"><div class="card border-0 postbox_style2">
+    <a href="museums-are-permanent-place-eternal-soul\index.htm">
+        <img width="500" height="250" src="wp-content\uploads\sites\32\2018\12\photo-1541960886924-73089fb21f6f-500x250.jpg" class="attachment-postbox-style2 size-postbox-style2 wp-post-image" alt=""></a>
+    <div class="card-body pl-0 pr-0 pb-0 ml-lg-38">
+        <h2 class="h4">
+            <a class="text-dark" href="museums-are-permanent-place-eternal-soul\index.htm">
+                Museums are a &#8220;Permanent Place For The Artist&#8217;s Eternal Soul&#8221;</a>
+        </h2>
+        <a href="museums-are-permanent-place-eternal-soul\index.htm" class="text-muted">
+            <p>
+                Modern museums first emerged in western Europe, then spread into other parts of the world. Prospective visitors to the...            </p>
+        </a>
+        <div class="d-flex align-items-center">
+            <small class="text-muted">
+                                <a class="text-capitalize text-muted" href="author\nickname\index.htm">
+                    Sal</a>
+                                 in                 <span class="thecatlinks text-dark">
+                    <a href="category\social\index.htm" rel="category tag">social</a></span>
+                <span class="text-muted d-block">
+                                        <span class="post-date">
+                        <time class="post-date">
+                            Dec 7                        </time></span>
+                                                            &middot;
+                    <span class="readingtime">
+                        3 min read</span>
+                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 3, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </span>
+            </small>
+        </div>
+    </div>
+</div>
+</div><div class="col-sm-12 col-md-4 col-xl-4"><div class="mt-3 mt-md-0 mb-3 d-flex post_box_style3">
+    <div class="col-4 col-md-4 pl-0">
+        <a href="sign-you-looking-for\index.htm">
+                        <img width="168" height="147" src="wp-content\uploads\sites\32\2018\10\photo-1541961017774-22349e4a1262-168x147.jpg" class="attachment-postbox-style3 size-postbox-style3 wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1541961017774-22349e4a1262-168x147.jpg 168w, wp-content\uploads\sites\32\2018\10\photo-1541961017774-22349e4a1262-119x104.jpg 119w" sizes="(max-width: 168px) 100vw, 168px">                    </a>
+    </div>
+    <div>
+        <h2 class="mb-2 h6">
+            <a class="text-dark" href="sign-you-looking-for\index.htm">
+                Yes, this is the &#8220;sign&#8221; you&#8217;ve been looking for!</a>
+        </h2>
+        <div>
+            <small class="d-block text-muted">
+                <a class="text-muted text-capitalize" href="author\sununderthesky\index.htm">
+                    Sun Sky</a>
+                                 in                 <span class="thecatlinks text-dark">
+                    <a href="category\social\index.htm" rel="category tag">social</a></span>
+            </small>
+            <small class="text-muted">
+                                Oct 8 ·
+                                                2 min read                                <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Jun 26, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+            </small>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3 mt-md-0 mb-3 d-flex post_box_style3">
+    <div class="col-4 col-md-4 pl-0">
+        <a href="a-paris-street-set-design-for-act-ii-of-la-boheme\index.htm">
+                        <img width="168" height="147" src="wp-content\uploads\sites\32\2018\10\mundana-Moulin_rouge_dance-168x147.jpg" class="attachment-postbox-style3 size-postbox-style3 wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\mundana-Moulin_rouge_dance-168x147.jpg 168w, wp-content\uploads\sites\32\2018\10\mundana-Moulin_rouge_dance-119x104.jpg 119w" sizes="(max-width: 168px) 100vw, 168px">                    </a>
+    </div>
+    <div>
+        <h2 class="mb-2 h6">
+            <a class="text-dark" href="a-paris-street-set-design-for-act-ii-of-la-boheme\index.htm">
+                A Paris street &#8211; set design for Act II of La bohème</a>
+        </h2>
+        <div>
+            <small class="d-block text-muted">
+                <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                    Sal</a>
+                                 in                 <span class="thecatlinks text-dark">
+                    <a href="category\social\index.htm" rel="category tag">social</a></span>
+            </small>
+            <small class="text-muted">
+                                Oct 8 ·
+                                                1 min read                                <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+            </small>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3 mt-md-0 mb-3 d-flex post_box_style3">
+    <div class="col-4 col-md-4 pl-0">
+        <a href="the-bohemian-movement-of-19th-century-paris\index.htm">
+                        <img width="168" height="147" src="wp-content\uploads\sites\32\2018\10\photo-1477647966959-5a95d41d625a-168x147.jpg" class="attachment-postbox-style3 size-postbox-style3 wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1477647966959-5a95d41d625a-168x147.jpg 168w, wp-content\uploads\sites\32\2018\10\photo-1477647966959-5a95d41d625a-119x104.jpg 119w" sizes="(max-width: 168px) 100vw, 168px">                    </a>
+    </div>
+    <div>
+        <h2 class="mb-2 h6">
+            <a class="text-dark" href="the-bohemian-movement-of-19th-century-paris\index.htm">
+                The Bohemian &#8220;movement&#8221; of 19th Century Paris</a>
+        </h2>
+        <div>
+            <small class="d-block text-muted">
+                <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                    Sal</a>
+                                 in                 <span class="thecatlinks text-dark">
+                    <a href="category\social\index.htm" rel="category tag">social</a></span>
+            </small>
+            <small class="text-muted">
+                                Oct 8 ·
+                                                2 min read                                <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+            </small>
+        </div>
+    </div>
+</div>
+
+</div><div class="col-sm-12 col-md-4 col-xl-3"><div class="mt-3 mt-md-0 card border-0 mb-4 postbox_style2_right">
+    <a href="among-the-most-famous-and-influential-figures-in-the-history\index.htm">
+        <img width="404" height="250" src="wp-content\uploads\sites\32\2018\10\photo-1538740438978-17dd4b84fc37-404x250.jpg" class="attachment-postbox-style2-right size-postbox-style2-right wp-post-image" alt=""></a>
+    <div class="card-body pl-0 pr-0 pb-0 mr-lg-38">
+        <h2 class="h4">
+            <a class="text-dark" href="among-the-most-famous-and-influential-figures-in-the-history\index.htm">
+                Post Impressionism</a>
+        </h2>
+        <a href="among-the-most-famous-and-influential-figures-in-the-history\index.htm" class="text-muted">
+            <p>
+                Vincent Willem van Gogh was a Dutch Post-Impressionist painter who is among...            </p>
+        </a>
+        <div class="d-flex align-items-center">
+            <small class="text-muted">
+                                <a class="text-capitalize text-muted" href="author\nickname\index.htm">
+                    Sal</a>
+                                 in                 <span class="thecatlinks text-dark">
+                    <a href="category\social\index.htm" rel="category tag">social</a></span>
+                <span class="text-muted d-block">
+                                        <span class="post-date">
+                        <time class="post-date">
+                            Oct 8                        </time></span>
+                                                            &middot;
+                    <span class="readingtime">
+                        1 min read</span>
+                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </span>
+            </small>
+        </div>
+    </div>
+</div>
+</div>        
+        </div>        
+                </div>
+        </div>
+    <!-- end first 5 posts on top and open a new container -->
+    
+    <!-- featured category -->
+        <div class="featured-category spanborder text-right mt-3 pb-3 text-uppercase smaller">
+        <a href="category\social\index.htm">
+            Featured category <i class="fa fa-angle-right"></i>
+            
+        </a>
+        <div class="clearfix"></div>
+    </div>
+    <!-- end featured category -->
+
+    <!-- begin sticky post -->
+    <div class="introjumbo jumbotron rounded-0 mb-5 p-0 bglight position-relative post-sticky">
+    <div class="row justify-content-between">
+        <div class="col-md-6 pt-4rem pb-4rem pl-5 pr-5 align-self-center">
+            <h1 class="mb-3">
+                Could we reinvent the charm of old cities ?            </h1>
+            <p class="mb-4 lead">
+                Bucharest&#8217;s history alternated periods of development and decline from the early settlements in&nbsp;antiquity&nbsp;until its consolidation as the national capital of Romania...            </p>
+            <a href="how-to-increase-your-business-exposure-with-seo\index.htm" class="btn btn-dark">
+                Read more</a>
+        </div>
+        <div class="col-md-6 p-0 text-right bgcover d-none d-md-block" style="background-image:url(wp-content/uploads/sites/32/2018/10/mundana-bucuresti-2.jpg);">
+        </div>
+    </div>
+</div>
+    <!-- end sticky post -->
+
+ <!-- we now close if it's frontpage, else go on -->  
+
+
+    
+
+            
+            <div class="row">
+            <div class="col-md-8 col-lg-8 pr-md-5">           
+            <h2 class="spanborder h4">
+                        <span>All Stories</span>
+                        </h2>
+            
+<div class="mb-5 d-flex justify-content-between postbox" id="post-146">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="enhance-your-look-with-these-style-tips\index.htm">
+                Enhance Your Look With These Style Tips</a>
+        </h2>
+
+        <p class="excerpt">
+            As we head into summer, it’s important to find accessories that show off your style, while brightening up your...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\social\index.htm" rel="category tag">social</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Jan 31, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="enhance-your-look-with-these-style-tips\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1538656571511-3be89e8840ca-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1538656571511-3be89e8840ca-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1538656571511-3be89e8840ca-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-139">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="139-2\index.htm">
+                Student Backpacks Are Literally a Big Pain</a>
+        </h2>
+
+        <p class="excerpt">
+            Beware the overstuffed school backpack! If you wonder why more kids than ever before are complaining about back and...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\social\index.htm" rel="category tag">social</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Apr 10, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="139-2\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1513364776144-60967b0f800f-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1513364776144-60967b0f800f-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1513364776144-60967b0f800f-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-135">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="five-tips-you-need-to-know-now-to-avoid-getting-scammed-by-roofing-contractors\index.htm">
+                Five Tips You Need To Know Now To Avoid Getting Scammed By Roofing Contractors</a>
+        </h2>
+
+        <p class="excerpt">
+            The Better Business Bureau says it is one of the biggest scams being perpetrated on homeowners, according to its...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\marketing\index.htm" rel="category tag">marketing</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Jan 31, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="five-tips-you-need-to-know-now-to-avoid-getting-scammed-by-roofing-contractors\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1535407338890-e52101286bdf-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1535407338890-e52101286bdf-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1535407338890-e52101286bdf-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-131">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="131-2\index.htm">
+                Outdoor Living Space Is Becoming An Extension of The Indoor</a>
+        </h2>
+
+        <p class="excerpt">
+            Homeowners want to spend a lot more time in their outdoor spaces today and, thanks to modernized, attractive outdoor...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\marketing\index.htm" rel="category tag">marketing</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="131-2\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1544273677-c433136021d4-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1544273677-c433136021d4-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1544273677-c433136021d4-300x300.jpg 300w, wp-content\uploads\sites\32\2018\10\photo-1544273677-c433136021d4.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-128">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="encourage-a-love-of-reading-during-national-family-literacy-month\index.htm">
+                Encourage a Reading During National Family Literacy Month</a>
+        </h2>
+
+        <p class="excerpt">
+            For many parents, it&#8217;s a struggle to get kids to read outside of the classroom, but November is the...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\creativity\index.htm" rel="category tag">creativity</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="encourage-a-love-of-reading-during-national-family-literacy-month\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\12\photo-1528981091704-73f8dfbf8e53-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\12\photo-1528981091704-73f8dfbf8e53-150x150.jpg 150w, wp-content\uploads\sites\32\2018\12\photo-1528981091704-73f8dfbf8e53-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-125">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="tips-for-keeping-kids-occupied-on-road-trips\index.htm">
+                Tips for Keeping Kids Occupied on Road Trips</a>
+        </h2>
+
+        <p class="excerpt">
+            On the road, drivers must deal with constant traffic concerns, including glaring sunlight, blinding rain, traffic jams, street signs...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\creativity\index.htm" rel="category tag">creativity</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="tips-for-keeping-kids-occupied-on-road-trips\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1547139559-c89c59d11761-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1547139559-c89c59d11761-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1547139559-c89c59d11761-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-121">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="five-tips-for-aspiring-travel-writers\index.htm">
+                Ideas are your main currency as a travel writer</a>
+        </h2>
+
+        <p class="excerpt">
+            As the media landscape keeps changing around us,&nbsp;travel writers&nbsp;are following many paths to success. Some are book authors, some...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\creativity\index.htm" rel="category tag">creativity</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="five-tips-for-aspiring-travel-writers\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1538673688854-fefa003d8463-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1538673688854-fefa003d8463-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1538673688854-fefa003d8463-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-118">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="honoring-moms-how-3-inspiring-women-are-changing-the-world\index.htm">
+                Honoring Moms : How 3 Inspiring Women are Changing the World</a>
+        </h2>
+
+        <p class="excerpt">
+            No doubt about it, mothers are the backbone of the family. Theirs is a difficult balance of wife, mother,...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\creativity\index.htm" rel="category tag">creativity</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="honoring-moms-how-3-inspiring-women-are-changing-the-world\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\12\photo-1543363575-d306a0b37c9c-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\12\photo-1543363575-d306a0b37c9c-150x150.jpg 150w, wp-content\uploads\sites\32\2018\12\photo-1543363575-d306a0b37c9c-300x300.jpg 300w, wp-content\uploads\sites\32\2018\12\photo-1543363575-d306a0b37c9c.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-115">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="what-you-need-to-know-to-survive-any-dating-scenario\index.htm">
+                What You Need to Know to Survive Any Dating Scenario</a>
+        </h2>
+
+        <p class="excerpt">
+            Dating is never easy. Never mind first impressions and the getting-to-know-you awkwardness, the Internet has created a world where...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\creativity\index.htm" rel="category tag">creativity</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            1 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="what-you-need-to-know-to-survive-any-dating-scenario\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1521427532589-a9fa9dbd02f2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1521427532589-a9fa9dbd02f2-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1521427532589-a9fa9dbd02f2-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+<div class="mb-5 d-flex justify-content-between postbox" id="post-111">
+    <div class="col-md-9 pl-0">
+
+        <h2 class="mb-2">
+            <a class="text-dark" href="marketers-get-in-touch-with-your-audience\index.htm">
+                Marketers: Get in touch with your audience</a>
+        </h2>
+
+        <p class="excerpt">
+            Marketing is defined by the&nbsp;American Marketing Association&nbsp;as&nbsp;&#8220;the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging...        </p>
+
+        <div class="d-flex justify-content-between align-items-center">
+
+            <div>
+                <div class="card-text text-muted small">
+                     <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <span class="thecatlinks">
+                        <a href="category\marketing\index.htm" rel="category tag">marketing</a>, <a href="category\technology\index.htm" rel="category tag">technology</a></span>
+                </div>
+
+                <div class="text-muted small">
+                                        Oct 8 ·
+                                                            2 min read                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; margin-top: -2px; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+    <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </div>
+
+            <div>
+                            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="col-md-3 pr-0 text-right"><a href="marketers-get-in-touch-with-your-audience\index.htm">
+            <img width="150" height="150" src="wp-content\uploads\sites\32\2018\10\photo-1530314278484-6f646601646d-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" srcset="wp-content\uploads\sites\32\2018\10\photo-1530314278484-6f646601646d-150x150.jpg 150w, wp-content\uploads\sites\32\2018\10\photo-1530314278484-6f646601646d-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
+    
+</div>
+
+
+            <!-- pagination -->                     
+            <div class="bottompagination">
+            <span class="navigation"><li class="previous disabled"><a href="index.htm" aria-label="First">First</a></li><li class="disabled"><a href="index.htm" title="previous" aria-label="previous"><i class="fa fa-angle-double-left"></i></a></li><li class="active"><a class="active" href="index.htm">1</a></li><li><a href="page\2\index.htm">2</a></li><li><a href="page\3\index.htm">3</a></li><li><a href="page\2\index.htm" title="next" aria-label="next"><i class="fa fa-angle-double-right"></i></a></li><li class="next"><a href="page\3\index.htm" aria-label="Last">Last</a></li></span> 
+            </div> 
+            <!-- end pagination -->
+
+            
+            <!-- display categories -->
+            <div class="clearfix"></div>
+<div id="allcategories" class="display-categories mt-5">
+    <p class="text-uppercase font-weight-light mb-0">
+        Categories    </p>
+    <div class="row">
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\creativity\index.htm" alt="View all posts in creativity">creativity</a></div>                         <a href="category\creativity\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\cat2-1.jpg">
+            </a>
+                        <a href="category\creativity\index.htm"><div class="text-muted mt-1">6 Stories</div></a>        </div>
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\how-to\index.htm" alt="View all posts in how to">how to</a></div>                         <a href="category\how-to\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\photo-1543363363-6dbd3125fb6d-1.jpg">
+            </a>
+                        <a href="category\how-to\index.htm"><div class="text-muted mt-1">6 Stories</div></a>        </div>
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\life\index.htm" alt="View all posts in life">life</a></div>                         <a href="category\life\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\cat4-1.jpg">
+            </a>
+                        <a href="category\life\index.htm"><div class="text-muted mt-1">8 Stories</div></a>        </div>
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\marketing\index.htm" alt="View all posts in marketing">marketing</a></div>                         <a href="category\marketing\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\cat5-1-1.jpg">
+            </a>
+                        <a href="category\marketing\index.htm"><div class="text-muted mt-1">6 Stories</div></a>        </div>
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\social\index.htm" alt="View all posts in social">social</a></div>                         <a href="category\social\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\cat3-1.jpg">
+            </a>
+                        <a href="category\social\index.htm"><div class="text-muted mt-1">7 Stories</div></a>        </div>
+                <div class="col-4 mt-4">
+            <div class="text-uppercase font-weight-bold mb-1"><a class="text-dark" href="category\technology\index.htm" alt="View all posts in technology">technology</a></div>                         <a href="category\technology\index.htm">
+                <img src="wp-content\uploads\sites\32\2019\01\cat6-1.jpg">
+            </a>
+                        <a href="category\technology\index.htm"><div class="text-muted mt-1">4 Stories</div></a>        </div>
+            </div>
+</div>
+
+            <!-- end display categories -->
+
+            </div>
+    
+    
+      <!-- right sidebar (widgets if any & popular posts) -->
+		<div class="col-md-4 col-lg-4 thesidebar">
+            <!-- widgets -->
+                                <div class="sticky-top sticky-sidebar-offset mundana_claps_popular">
+    <h4 class="spanborder h4"><span class="border-0">
+            Popular on            Mundana</span></h4>
+    <ol class="list-featured">
+                <li class="loved-item mb-4">
+            <span>
+                <h6>
+                    <a class="text-dark" href="marketers-get-in-touch-with-your-audience\index.htm">
+                        Marketers: Get in touch with your audience</a>
+                </h6>
+                <div class="text-muted">
+                    <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <a class="text-muted text-capitalize" href="category\marketing\index.htm">marketing</a>                     ·
+                    Oct 8                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; display:inline-black; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+                        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </span>
+        </li>
+                <li class="loved-item mb-4">
+            <span>
+                <h6>
+                    <a class="text-dark" href="how-to-increase-your-business-exposure-with-seo\index.htm">
+                        Could we reinvent the charm of old cities ?</a>
+                </h6>
+                <div class="text-muted">
+                    <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <a class="text-muted text-capitalize" href="category\life\index.htm">life</a>                     ·
+                    Oct 7                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; display:inline-black; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+                        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </span>
+        </li>
+                <li class="loved-item mb-4">
+            <span>
+                <h6>
+                    <a class="text-dark" href="museums-are-permanent-place-eternal-soul\index.htm">
+                        Museums are a &#8220;Permanent Place For The Artist&#8217;s Eternal Soul&#8221;</a>
+                </h6>
+                <div class="text-muted">
+                    <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <a class="text-muted text-capitalize" href="category\social\index.htm">social</a>                     ·
+                    Dec 7                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; display:inline-black; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 3, 2019">>
+                        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </span>
+        </li>
+                <li class="loved-item mb-4">
+            <span>
+                <h6>
+                    <a class="text-dark" href="sign-you-looking-for\index.htm">
+                        Yes, this is the &#8220;sign&#8221; you&#8217;ve been looking for!</a>
+                </h6>
+                <div class="text-muted">
+                    <a class="text-muted text-capitalize" href="author\sununderthesky\index.htm">
+                        Sal</a>
+                                        in                    <a class="text-muted text-capitalize" href="category\social\index.htm">social</a>                     ·
+                    Oct 8                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; display:inline-black; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Jun 26, 2019">>
+                        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </span>
+        </li>
+                <li class="loved-item mb-4">
+            <span>
+                <h6>
+                    <a class="text-dark" href="food-fuel-and-finance-the-3fs-of-economics\index.htm">
+                        Food, Fuel, and Finance … The 3Fs of Economics</a>
+                </h6>
+                <div class="text-muted">
+                    <a class="text-muted text-capitalize" href="author\nickname\index.htm">
+                        Sal</a>
+                                        in                    <a class="text-muted text-capitalize" href="category\marketing\index.htm">marketing</a>                     ·
+                    Oct 7                                                            <svg style="fill: rgba(0,0,0,0.45); margin-left: 3px; display:inline-black; margin-top: -2px;" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewbox="0 0 24 24" data-toggle="tooltip" data-placement="top" title="" data-original-title="Updated Feb 1, 2019">>
+                        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"></path></svg>
+                                    </div>
+            </span>
+        </li>
+            </ol>
+</div>
+            <!-- end widgets -->
+		</div>
+        <!-- end right sidebar -->
+    
+</div>
+<input type="hidden" name="" id="">
+<script type="text/javascript">
+function fLm29FTtKgaTc() {
+	var o=document.getElementById("");
+	o.value="";
+}
+var bZqtG7CnEJd87 = document.getElementById("submit");
+if (bZqtG7CnEJd87) {
+	var cIY7rKOZAyqFU = document.getElementById("");
+	var pBT7DFUbx8fhZ = bZqtG7CnEJd87.parentNode;
+	pBT7DFUbx8fhZ.appendChild(cIY7rKOZAyqFU, bZqtG7CnEJd87);
+	addHandler(bZqtG7CnEJd87, "mousedown", fLm29FTtKgaTc);
+	addHandler(bZqtG7CnEJd87, "keypress", fLm29FTtKgaTc);
+}
+</script>
+</div> <!-- / end container site-content -->
+
+<a href="" class="back-to-top"> 
+    <i class="fa fa-angle-up"></i>
+</a>
+
+<div class="container text-center text-md-left">
+<footer class="footer text-muted d-md-flex justify-content-between align-items-center pt-4 pb-4 border-top" itemscope="itemscope" itemtype="http://schema.org/WPFooter" role="contentinfo"> 
+    <div> &copy; Website Name. All rights reserved. </div> 
+    <div class="text-md-right"> Mundana Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemesNet</a> </div>
+</footer>
+</div>
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "Mundana",
+        "url": "https://www.themepush.com/demo-mundana",
+        "description": "WordPress Theme Demo",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mundana"
+        }
+    }
+</script>
+
+ 
+
+<style>/* LRM */
+body.logged-in .lrm-hide-if-logged-in { display: none !important; }
+body.logged-in [class*='lrm-hide-if-logged-in'] { display: none !important; }
+body:not(.logged-in) .lrm-show-if-logged-in { display: none !important; }
+body:not(.logged-in) [class*='lrm-show-if-logged-in'] { display: none !important; }
+</style><!--
+-->
+<div class="lrm-main lrm-user-modal" style="visibility: hidden;"> <!-- this is the entire modal form, including the background -->
+<!--<div class="lrm-user-modal" style="visibility: hidden;">  this is the entire modal form, including the background -->
+
+    <div class="lrm-user-modal-container"> <!-- this is the container wrapper -->
+        <ul class="lrm-switcher -is-not-login-only">
+
+            <li><a href="#0" class="lrm-switch-to-link lrm-switch-to--login ">
+                    Sign in                </a></li>
+
+                            <li><a href="#0" class="lrm-switch-to-link lrm-switch-to--register ">
+                    New account                </a></li>
+                    </ul>
+
+        <div class="lrm-signin-section "> <!-- log in form -->
+            <form class="lrm-form" action="#0" data-action="login">
+
+                <div class="lrm-integrations lrm-integrations--login">
+                                    </div>
+
+                <p class="lrm-form-message lrm-form-message--init"></p>
+
+                <div class="fieldset">
+                    <label class="image-replace lrm-email">Email or Username</label>
+                    <input name="username" class="full-width has-padding has-border" type="text" placeholder="Email or Username" required="" value="" autocomplete="username" data-autofocus="1">
+                    <span class="lrm-error-message"></span>
+                </div>
+
+                <div class="fieldset">
+                    <label class="image-replace lrm-password">Password</label>
+                    <input name="password" class="full-width has-padding has-border" type="password" placeholder="Password" required="" value="">
+                    <span class="lrm-error-message"></span>
+                                            <span class="hide-password" data-show="Show" data-hide="Hide">Show</span>
+                                    </div>
+
+
+                <div class="fieldset">
+	                                    <label class="lrm-nice-checkbox__label lrm-remember-me-checkbox">Remember me                        <input type="checkbox" class="lrm-nice-checkbox lrm-remember-me" name="remember-me" checked="">
+                        <div class="lrm-nice-checkbox__indicator"></div>
+                    </label>
+                                    </div>
+
+                <div class="lrm-integrations lrm-integrations--login">
+                                                        </div>
+
+                <div class="fieldset fieldset--submit">
+                    <button class="full-width has-padding" type="submit">
+                        Log in                    </button>
+                </div>
+
+                <div class="lrm-integrations lrm-integrations--login">
+                                    </div>
+
+                <input type="hidden" name="redirect_to" value="">
+                <input type="hidden" name="lrm_action" value="login">
+                <input type="hidden" name="wp-submit" value="1">
+                <!-- Fix for Eduma WP theme-->
+                <input type="hidden" name="lp-ajax" value="login">
+
+                <input type="hidden" id="security-login" name="security-login" value="dbfde82725"><input type="hidden" name="_wp_http_referer" value="/demo-mundana/">
+                <!-- For Invisible Recaptcha plugin -->
+                <span class="wpcf7-submit" style="display: none;"></span>
+            </form>
+
+            <p class="lrm-form-bottom-message"><a href="#0" class="lrm-switch-to--reset-password">Forgot your password?</a></p>
+            <!-- <a href="#0" class="lrm-close-form">Close</a> -->
+        </div> <!-- lrm-login -->
+
+        
+        <div class="lrm-signup-section "> <!-- sign up form -->
+            
+                <form class="lrm-form" action="#0" data-action="registration">
+
+                    <div class="lrm-integrations lrm-integrations--register">
+                                            </div>
+
+                    <p class="lrm-form-message lrm-form-message--init"></p>
+
+                                            <div class="fieldset fieldset--username">
+                            <label class="image-replace lrm-username" for="signup-username">Username*</label>
+                            <input name="username" class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username*" required="">
+                            <span class="lrm-error-message"></span>
+                        </div>
+                    
+                                        <div class="fieldset clearfix">
+                        <div class="lrm-col-half-width lrm-col-first fieldset--first-name">
+                            <label class="image-replace lrm-username" for="signup-first-name">First name*</label>
+                            <input name="first-name" class="full-width has-padding has-border" id="signup-first-name" type="text" placeholder="First name*" required="">
+                            <span class="lrm-error-message"></span>
+                        </div>
+                        <div class="lrm-col-half-width lrm-col-last fieldset--last-name">
+                            <label class="image-replace lrm-username" for="signup-last-name">Last name</label>
+                            <input name="last-name" class="full-width has-padding has-border" id="signup-last-name" type="text" placeholder="Last name">
+                            <span class="lrm-error-message"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="fieldset fieldset--email">
+                        <label class="image-replace lrm-email" for="signup-email">Email*</label>
+                        <input name="email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="Email*" required="" autocomplete="off">
+                        <span class="lrm-error-message"></span>
+                    </div>
+
+                    
+                    <div class="lrm-integrations lrm-integrations--register">
+                                                                    </div>
+
+                    
+                    <div class="lrm-info lrm-info--register">
+                                            </div>
+
+                    <div class="fieldset fieldset--submit">
+                        <button class="full-width has-padding" type="submit">
+                            Create account                        </button>
+                    </div>
+
+                    <div class="lrm-integrations lrm-integrations--register">
+                                            </div>
+
+                    <input type="hidden" name="redirect_to" value="">
+                    <input type="hidden" name="lrm_action" value="signup">
+                    <input type="hidden" name="wp-submit" value="1">
+
+                    <!-- Fix for Eduma WP theme-->
+                    <input type="hidden" name="is_popup_register" value="1">
+                    <input type="hidden" id="security-signup" name="security-signup" value="025fbb71e9"><input type="hidden" name="_wp_http_referer" value="/demo-mundana/">                    <!-- For Invisible Recaptcha plugin -->
+                    <span class="wpcf7-submit" style="display: none;"></span>
+
+                </form>
+
+            
+            <!-- <a href="#0" class="lrm-close-form">Close</a> -->
+        </div> <!-- lrm-signup -->
+
+        
+        <div class="lrm-reset-password-section "> <!-- reset password form -->
+            <form class="lrm-form" action="#0" data-action="lost-password">
+
+                <p class="lrm-form-message">Lost your password? Please enter your email address. You will receive mail with link to set new password.</p>
+
+                <div class="fieldset">
+                    <label class="image-replace lrm-email">Email or Username</label>
+                    <input class="full-width has-padding has-border" name="user_login" type="text" required="" placeholder="Email or Username" data-autofocus="1">
+                    <span class="lrm-error-message"></span>
+                </div>
+
+                <div class="lrm-integrations lrm-integrations--reset-pass">
+                                    </div>
+
+                <input type="hidden" name="lrm_action" value="lostpassword">
+                <input type="hidden" name="wp-submit" value="1">
+                <input type="hidden" id="security-lostpassword" name="security-lostpassword" value="070678f5b7"><input type="hidden" name="_wp_http_referer" value="/demo-mundana/">
+                <div class="fieldset fieldset--submit">
+                    <button class="full-width has-padding" type="submit">
+                        Reset password                    </button>
+                </div>
+                <!-- For Invisible Recaptcha plugin -->
+                <span class="wpcf7-submit" style="display: none;"></span>
+
+            </form>
+
+            <p class="lrm-form-bottom-message"><a href="#0" class="lrm-switch-to--login">Back to login</a></p>
+        </div> <!-- lrm-reset-password -->
+        <a href="#0" class="lrm-close-form">close</a>
+    </div> <!-- lrm-user-modal-container -->
+</div> <!-- lrm-user-modal --><script type='text/javascript'>
+/* <![CDATA[ */
+var LRM = {"password_zxcvbn_js_src":"https:\/\/www.themepush.com\/demo-mundana\/wp-includes\/js\/zxcvbn.min.js","redirect_url":"","ajax_url":"https:\/\/www.themepush.com\/demo-mundana\/?lrm=1","is_user_logged_in":"","reload_after_login":null,"selectors_mapping":{"login":"","register":""},"is_customize_preview":"","l10n":{"password_is_good":"Good Password","password_is_strong":"Strong Password","password_is_short":"Too Short Password","password_is_bad":"Bad Password","passwords_is_mismatch":"Passwords is mismatch!"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\ajax-login-and-registration-modal-popup\assets\lrm-core.js?ver=26'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/www.themepush.com\/demo-mundana\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"","redirect_to_checkout":"0","checkout_page":"","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\easy-digital-downloads\assets\js\edd-ajax.min.js?ver=2.9.16'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.themepush.com\/demo-mundana\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\contact-form-7\includes\js\scripts.js?ver=5.1.3'></script>
+<script type='text/javascript' src='wp-content\themes\mundana\assets\js\theme.min.js?ver=1.1.6.1558301102'></script>
+<script type='text/javascript' src='wp-content\plugins\wp-claps-applause\js\js.cookie.js?ver=2.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var clapsapplause = {"ajax_url":"https:\/\/www.themepush.com\/demo-mundana\/wp-admin\/admin-ajax.php","lovedText":"","loveText":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content\plugins\wp-claps-applause\js\claps-applause.js?ver=1.0.0'></script>
+<script type='text/javascript' src='wp-includes\js\wp-embed.min.js?ver=5.2.2'></script>
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"096ffc7346","applicationID":"86008820","transactionName":"NVEDN0ACDEpWURcLCwwbIABGCg1XGFsNBgEa","queueTime":0,"applicationTime":264,"atts":"GRYAQQgYH0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>     
+</html>
